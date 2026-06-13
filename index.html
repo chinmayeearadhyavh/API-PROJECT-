@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Character Search</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Rick and Morty API</h1>
+        <p>Explore the multiverse characters!</p>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search characters by name..." autocomplete="off">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Loading State -->
+        <div id="loading" class="state-container hidden">
+            <div class="spinner"></div>
+            <p>Loading characters across dimensions...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="state-container hidden">
+            <i class="fas fa-exclamation-triangle fa-3x"></i>
+            <h2 id="error-message">No characters found.</h2>
+            <p>Try searching for a different name.</p>
+        </div>
+
+        <!-- Data Display Grid -->
+        <div id="character-grid" class="grid">
+            <!-- Cards will be injected here by JavaScript -->
+        </div>
+        
+        <!-- Pagination Controls -->
+        <div id="pagination" class="pagination hidden">
+            <button id="prev-btn" class="btn" disabled><i class="fas fa-chevron-left"></i> Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" class="btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Built with <i class="fas fa-heart"></i> and the <a href="https://rickandmortyapi.com/" target="_blank">Rick and Morty API</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
